@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aashik Basha | Professional Portfolio</title>
+
+<link href="myimage.jpg" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #6c63ff;
+    --dark: #111;
+    --light: #ffffff;
+    --bg-light: #f4f6ff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    transition: 0.4s;
+}
+
+.dark-mode {
+    background: var(--dark);
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 8%;
+    background: var(--primary);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h2 { margin: 0; }
+
+nav button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+section {
+    padding: 100px 8%;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hero img {
+    width: 280px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.hero-text h1 {
+    font-size: 45px;
+}
+
+.typing {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: var(--primary);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.projects {
+    text-align: center;
+}
+
+.project-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.project {
+    background: white;
+    padding: 25px;
+    width: 260px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.dark-mode .project {
+    background: #222;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.contact {
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary);
+    color: white;
+}
+
+@media(max-width:768px){
+    .hero{
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero img{
+        margin-top: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Aashik Basha</h2>
+    <button onclick="toggleMode()">🌙 Toggle Mode</button>
+</nav>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Hello, I'm Aashik Basha</h1>
+        <h3>I am <span class="typing"></span></h3>
+        <p>Professional Web Developer & Creative Editor.</p>
+        <a href="#contact" class="btn">Hire Me</a>
+    </div>
+    <img src="579608c2-5188-430d-9ee8-c721fdfd5db6.tmp" alt="Profile">
+</section>
+
+<section class="projects">
+    <h2>My Projects</h2>
+    <div class="project-box">
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>Modern responsive personal website.</p>
+        </div>
+        <div class="project">
+            <h3>E-Commerce UI</h3>
+            <p>Creative online shopping interface design.</p>
+        </div>
+        <div class="project">
+            <h3>Video Editing Work</h3>
+            <p>Professional cinematic video projects.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>📞 9500770429</p>
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <br>
+        <button class="btn" type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Aashik Basha | All Rights Reserved
+</footer>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+}
+
+const textArray = ["Web Developer", "Creative Editor", "UI Designer"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+    if(count === textArray.length){
+        count = 0;
+    }
+    currentText = textArray[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector(".typing").textContent = letter;
+    if(letter.length === currentText.length){
+        count++;
+        index = 0;
+    }
+    setTimeout(type, 150);
+})();
+</script>
+
+</body>
+</html>
