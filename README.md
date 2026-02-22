@@ -60,3 +60,7 @@ Clean and semantic coding
 ⭐ Goal
 
 To continuously learn, grow, and create digital experiences that are both functional and visually appealing.
+output:
+ https://aashikbasha07.github.io/project-1/
+
+
